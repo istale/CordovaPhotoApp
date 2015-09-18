@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+
+    <!--
+        視需要在下方的中繼標籤中自訂內容安全性原則。將 'unsafe-inline' 加入 default-src 以啟用內嵌 JavaScript。
+        如需詳細資料，請參閱 http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <title>MyPhotoApp</title>
+
+    <!-- MyPhotoApp 參考 -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainCtrl">
+    
+    <button ng-click="viewAction.takePhoto()">Take Photo</button>
+    <img src="//:0" id="myImage" alt="Alternate Text" width="100" height="100"/>
+
+    <button ng-click="viewAction.takePhotoFromAlbum()">Take Photo From Album</button>
+    <div ng-repeat="item in vm.photoList" >
+        <img alt="Alternate Text" width="100" height="100" ng-src="{{item}}"/>
+    </div>
+
+    <!-- Cordova 參考，建置後會加入您的應用程式。 -->
+    <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="lib/angular-hammer/hammer.min.js"></script>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-animate.min.js"></script>
+    <script src="lib/angular/angular-sanitize.min.js"></script>
+    <script src="lib/angular-hammer/angular.hammer.js"></script>
+    <script src="lib/ngCordova/ng-cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+
+
+</body>
+</html>
